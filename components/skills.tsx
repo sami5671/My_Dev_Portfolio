@@ -1,41 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Database, Globe, Lock } from "lucide-react";
+import { Code2, Database, Globe, Lock, TestTubes } from "lucide-react";
 
 export function Skills() {
   const skillCategories = [
     {
       icon: Globe,
       title: "Frontend",
-      skills: ["React.js", "Redux", "Tailwind CSS", "Axios", "TypeScript"],
+      skills: ["React.js", "Next.js", "Redux", "Tailwind CSS", "Axios", "TypeScript"],
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Code2,
       title: "Backend",
-      skills: ["Node.js", "Express.js", "Mongoose", "REST APIs", "Middleware"],
+      skills: ["Node.js", "Express.js", "Mongoose", "REST APIs"],
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: Database,
       title: "Database",
-      skills: ["MongoDB", "SQL", "Firebase", "Aggregation", "Indexing"],
+      skills: ["MongoDB", "MySQL", "Firebase"],
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: Lock,
       title: "Auth & Security",
-      skills: ["JWT", "Firebase Auth", "Role-Based Access", "OAuth", "Bcrypt"],
+      skills: ["JWT", "Firebase Auth", "OAuth", "NextAuth", "Bcrypt"],
       color: "from-orange-500 to-red-500",
+    },
+    {
+      icon: TestTubes,
+      title: "Testing",
+      skills: ["Playwright", "Selenium", "Postman"],
+      color: "from-green-500 to-lime-200",
     },
   ];
 
   const languages = [
     { name: "JavaScript", level: 95 },
-    { name: "TypeScript", level: 85 },
-    { name: "Python", level: 75 },
-    { name: "C++", level: 70 },
+    { name: "TypeScript", level: 70 },
+    { name: "Python", level: 90 },
+    { name: "Java", level: 70 },
+    { name: "C++", level: 80 },
   ];
 
   const containerVariants = {

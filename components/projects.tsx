@@ -10,7 +10,7 @@ export function Projects() {
     {
       title: "Dream Car",
       description: "Online SaaS Platform",
-      image: "/project-dream-car.jpg",
+      image: "/dreamcar.png",
       achievements: [
         "Role-based system (Admin, Moderator, User)",
         "Integrated SSLCOMMERZ & Stripe",
@@ -24,7 +24,7 @@ export function Projects() {
     {
       title: "Plant World",
       description: "E-commerce Platform",
-      image: "/project-plant-world.jpg",
+      image: "/plantworld.png",
       achievements: ["Firebase authentication system", "Stripe integration", "Fully responsive UI"],
       tech: ["React", "Firebase", "Stripe", "Tailwind CSS"],
       liveLink: "#",
@@ -102,7 +102,7 @@ export function Projects() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="object-fit transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>

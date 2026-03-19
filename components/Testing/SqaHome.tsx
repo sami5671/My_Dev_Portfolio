@@ -9,14 +9,16 @@ import { Navbar } from "@/components/navbar";
 import { Projects } from "@/components/projects";
 import { Resume } from "@/components/resume";
 import { Skills } from "@/components/skills";
+import { ScrollProgress } from "../scroll-progress";
+import { HeroSqa } from "./hero-sqa";
 
 export function SqaHome() {
   return (
     <>
       <GradientBackground />
-      {/* <ScrollProgress /> */}
+      <ScrollProgress />
       <Navbar />
-      {/* <Hero /> */}
+      <HeroSqa />
       <Skills />
       <Projects />
       <Achievements />

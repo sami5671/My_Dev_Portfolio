@@ -93,7 +93,9 @@ export function ProjectsSqa() {
             Featured{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-foreground/60 text-lg">Production-ready applications showcasing technical expertise</p>
+          <p className="text-foreground/60 text-lg">
+            here are my expertise in test automation, performance, and software quality assurance
+          </p>
         </motion.div>
 
         <motion.div

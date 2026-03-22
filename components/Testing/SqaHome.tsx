@@ -6,10 +6,10 @@ import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { GradientBackground } from "@/components/gradient-background";
 import { Navbar } from "@/components/navbar";
-import { Projects } from "@/components/projects";
 import { Resume } from "@/components/resume";
 import { ScrollProgress } from "../scroll-progress";
 import { HeroSqa } from "./hero-sqa";
+import { ProjectsSqa } from "./projects-sqa";
 import { SkillsSqa } from "./skills-sqa";
 
 export function SqaHome() {
@@ -20,7 +20,7 @@ export function SqaHome() {
       <Navbar />
       <HeroSqa />
       <SkillsSqa />
-      <Projects />
+      <ProjectsSqa />
       <Achievements />
       <Resume />
       <Blog />

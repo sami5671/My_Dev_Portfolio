@@ -44,7 +44,7 @@ export function HeroSqa() {
           animate="visible"
         >
           {/* Left Column - Text Content */}
-          <motion.div variants={itemVariants} className="space-y-6">
+          <motion.div variants={itemVariants} className="space-y-3">
             <motion.div variants={itemVariants} className="space-y-2">
               <h1 className="text-5xl sm:text-6xl font-bold text-balance">
                 Hi, I'm{" "}
@@ -130,7 +130,7 @@ export function HeroSqa() {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-accent/50 rounded-full" />
 
               {/* Image container */}
-              <div className="relative w-full h-full rounded-full overflow-hidden bg-background/50 backdrop-blur-xl border-2 border-primary/30 shadow-2xl animate-float">
+              <div className="relative w-full h-full rounded-full overflow-hidden bg-background/50 backdrop-blur-xl border-2 border-primary/30 shadow-2xl">
                 <Image src="/profile.jpeg" alt="MD Sami Alam" fill className="object-cover object-top" priority />
               </div>
             </div>

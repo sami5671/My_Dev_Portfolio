@@ -124,13 +124,13 @@ export function HeroSqa() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 group">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 group lg:-mt-20">
               {/* Glowing gradient border */}
               <div className="absolute -inset-2 bg-gradient-to-r from-primary to-accent rounded-full opacity-75 blur-2xl group-hover:opacity-100 animate-glow-pulse transition-all duration-300" />
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-accent/50 rounded-full" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-accent/50 rounded-full " />
 
               {/* Image container */}
-              <div className="relative w-full h-full rounded-full overflow-hidden bg-background/50 backdrop-blur-xl border-2 border-primary/30 shadow-2xl">
+              <div className="relative w-full h-full animate-float rounded-full overflow-hidden bg-background/50 backdrop-blur-xl border-2 border-primary/30 shadow-2xl">
                 <Image src="/profile.jpeg" alt="MD Sami Alam" fill className="object-cover object-top" priority />
               </div>
             </div>

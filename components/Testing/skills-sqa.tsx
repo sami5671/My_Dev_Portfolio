@@ -79,7 +79,7 @@ export function SkillsSqa() {
             Technical{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Expertise</span>
           </h2>
-          <p className="text-foreground/60 text-lg">Comprehensive skill set in modern web development</p>
+          <p className="text-foreground/60 text-md">Here are Some expertise in SQA</p>
         </motion.div>
 
         {/* Skill Categories Grid */}

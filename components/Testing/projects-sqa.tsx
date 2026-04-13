@@ -1,15 +1,21 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import notfound from "@/public/404 Page not found.json";
 import { motion } from "framer-motion";
+import Lottie from "lottie-react";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
-
+import { useState } from "react";
 export function ProjectsSqa() {
+  const [activeFilter, setActiveFilter] = useState("all");
+
   const projects = [
     {
+      id: 1,
       title: "Add To Cart Testing With Price Calculation",
       description: "Automation Testing",
+      type: "automation",
       image: "/automation1.png",
       achievements: [
         "Product Add to Cart",
@@ -20,13 +26,14 @@ export function ProjectsSqa() {
         "Page Object Model (POM) design for maintainable code",
       ],
       tech: ["Playwright", "TypeScript", "GitHub Actions", "Page Object Model"],
-      liveLink: "#",
-      clientLink: "https://github.com/sami5671/Playwright_Exercise?tab=readme-ov-file",
-      serverLink: "#",
+      githubLink: "https://github.com/sami5671/Playwright_Exercise?tab=readme-ov-file",
+      applicationLink: "https://automationexercise.com/",
     },
     {
+      id: 2,
       title: "AI Professor Performance Testing k6",
       description: "Performance Testing",
+      type: "performance",
       image: "/performance1.png",
       achievements: [
         "Login Performance Under different Load",
@@ -36,13 +43,15 @@ export function ProjectsSqa() {
       ],
       tech: ["k6", "Grafana Cloud", "JavaScript"],
       liveLink: "#",
-      clientLink:
+      githubLink:
         "https://github.com/sami5671/AI_Professor_PerformanceTesting_k6?tab=readme-ov-file#-performance-testing-report-student--teacher-performance-dashboards",
-      serverLink: "#",
+      applicationLink: "https://diu.aiteacher.daffodilglobal.ai/",
     },
     {
+      id: 3,
       title: "End-to-End Automation E-Commerce Website",
       description: "Automation Testing",
+      type: "automation",
       image: "/automation2.png",
       achievements: [
         "Login automation",
@@ -53,11 +62,27 @@ export function ProjectsSqa() {
         "Assertions for reliable validation",
       ],
       tech: ["Selenium", "Java", "TestNG", "Maven", "POM"],
-      liveLink: "#",
-      clientLink: "https://github.com/sami5671/NopCommerce_selenium_web_automation?tab=readme-ov-file",
-      serverLink: "#",
+      githubLink: "https://github.com/sami5671/NopCommerce_selenium_web_automation?tab=readme-ov-file",
+      applicationLink: "https://demo.nopcommerce.com/",
+    },
+    {
+      id: 4,
+      title: "360 Patshala Authentication Manual Testing",
+      description: "Manual Testing",
+      type: "manual",
+      image: "/360patshala.png",
+      achievements: [
+        "Login functionality test",
+        "Registration functionality test",
+        "Bug Report of Login & Registration",
+      ],
+      tech: ["Manual Testing", "MS Word", "MS Excel"],
+      githubLink: "https://github.com/sami5671/Manual_Testing_Authentication",
+      applicationLink: "https://360pathshala.com/",
     },
   ];
+
+  const filteredProjects = activeFilter === "all" ? projects : projects.filter((p) => p.type === activeFilter);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -82,6 +107,7 @@ export function ProjectsSqa() {
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+        {/* Heading */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -93,88 +119,115 @@ export function ProjectsSqa() {
             Featured{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-foreground/60 text-lg">
-            here are my expertise in test automation, performance, and software quality assurance
+          <p className="text-foreground/60 text-md">
+            I believe that Code may build the product, but Testing builds the trust that every client truly values
           </p>
         </motion.div>
 
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {["all", "manual", "automation", "performance", "api", "database", "security", "mobile"].map((type) => (
+            <button
+              key={type}
+              onClick={() => setActiveFilter(type)}
+              className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300
+                ${
+                  activeFilter === type
+                    ? "bg-gradient-to-r from-primary to-accent text-foreground border-primary rounded-md"
+                    : "bg-background/50 border-border/30 text-foreground/70 hover:bg-primary/10 border-primary rounded-md"
+                }`}
+            >
+              {type.charAt(0).toUpperCase() + type.slice(1)}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
         <motion.div
+          key={activeFilter} // ✅ IMPORTANT FIX
           className="grid grid-cols-1 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              variants={itemVariants}
-              className="group cursor-pointer"
-              whileHover={{ y: -10 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
-              <div className="h-full flex flex-col rounded-2xl overflow-hidden bg-card/40 backdrop-blur-xl border border-border/50 hover:border-primary/30 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-primary/20">
-                {/* Image Container */}
-                <div className="relative h-48 sm:h-56 overflow-hidden bg-background/50">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-fit transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {filteredProjects.length === 0 ? (
+            <div className="col-span-3 flex flex-col items-center justify-center py-10">
+              <Lottie animationData={notfound} loop className="w-82 h-82" />
+              <p className="text-foreground/60 mt-4 text-lg">No projects found</p>
+            </div>
+          ) : (
+            filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={itemVariants}
+                className="group cursor-pointer"
+                whileHover={{ y: -10 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <div className="h-full flex flex-col rounded-2xl overflow-hidden bg-card/40 backdrop-blur-xl border border-border/50 hover:border-primary/30 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-primary/20">
+                  {/* Image */}
+                  <div className="relative h-48 sm:h-56 overflow-hidden bg-background/50">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-fit transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 p-6 space-y-4 flex flex-col">
+                    <div>
+                      <h3 className="text-2xl font-bold text-foreground mb-1">{project.title}</h3>
+                      <p className="text-primary/80 font-medium">{project.description}</p>
+                    </div>
+
+                    <ul className="space-y-2 flex-1">
+                      {project.achievements.map((achievement, i) => (
+                        <li key={i} className="text-sm text-foreground/70 flex gap-2">
+                          <span className="text-primary mt-1">▸</span>
+                          <span>{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 rounded-full bg-background/50 border border-border/30 text-xs font-medium text-foreground/70"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-2 pt-4 border-t border-border/30">
+                      <a href={project.applicationLink} className="flex-1">
+                        <Button
+                          size="sm"
+                          className="w-full text-white font-semibold bg-gradient-to-r from-primary to-accent cursor-pointer"
+                        >
+                          App Link
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                        </Button>
+                      </a>
+                      <a href={project.githubLink} className="flex-1">
+                        <Button
+                          size="sm"
+                          className="w-full text-white font-semibold bg-gradient-to-r from-primary to-accent cursor-pointer"
+                        >
+                          Github
+                          <Github className="w-4 h-4 mr-2" />
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-
-                {/* Content */}
-                <div className="flex-1 p-6 space-y-4 flex flex-col">
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-1">{project.title}</h3>
-                    <p className="text-primary/80 font-medium">{project.description}</p>
-                  </div>
-
-                  {/* Achievements */}
-                  <ul className="space-y-2 flex-1">
-                    {project.achievements.map((achievement) => (
-                      <li key={achievement} className="text-sm text-foreground/70 flex gap-2">
-                        <span className="text-primary mt-1">▸</span>
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 rounded-full bg-background/50 border border-border/30 text-xs font-medium text-foreground/70 hover:bg-primary/10 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex gap-2 pt-4 border-t border-border/30">
-                    <a href={project.liveLink} className="flex-1">
-                      <Button
-                        size="sm"
-                        className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-foreground"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
-                      </Button>
-                    </a>
-                    <a href={project.clientLink} className="flex-1">
-                      <Button size="sm" className="btn btn-slate w-full">
-                        <Github className="w-4 h-4" />
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))
+          )}
         </motion.div>
       </div>
     </section>

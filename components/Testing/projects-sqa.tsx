@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export function ProjectsSqa() {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 3;
 
   const projects = [
     {
@@ -83,6 +85,17 @@ export function ProjectsSqa() {
   ];
 
   const filteredProjects = activeFilter === "all" ? projects : projects.filter((p) => p.type === activeFilter);
+  // 🔹 Reset page when filter changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeFilter]);
+
+  // 🔹 Pagination Logic
+  const indexOfLast = currentPage * projectsPerPage;
+  const indexOfFirst = indexOfLast - projectsPerPage;
+  const currentProjects = filteredProjects.slice(indexOfFirst, indexOfLast);
+
+  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -144,20 +157,20 @@ export function ProjectsSqa() {
 
         {/* Projects Grid */}
         <motion.div
-          key={activeFilter} // ✅ IMPORTANT FIX
+          key={currentPage + activeFilter}
           className="grid grid-cols-1 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {filteredProjects.length === 0 ? (
+          {currentProjects?.length === 0 ? (
             <div className="col-span-3 flex flex-col items-center justify-center py-10">
               <Lottie animationData={notfound} loop className="w-82 h-82" />
               <p className="text-foreground/60 mt-4 text-lg">No projects found</p>
             </div>
           ) : (
-            filteredProjects.map((project) => (
+            currentProjects?.map((project) => (
               <motion.div
                 key={project.id}
                 variants={itemVariants}
@@ -229,6 +242,22 @@ export function ProjectsSqa() {
             ))
           )}
         </motion.div>
+
+        {/* 🔹 Pagination */}
+        {totalPages > 1 && (
+          <div className="flex justify-center mt-10 gap-2">
+            {[...Array(totalPages)].map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentPage(index + 1)}
+                className={`px-4 py-2 rounded-md border
+                ${currentPage === index + 1 ? "bg-primary text-white" : "bg-background text-foreground"}`}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

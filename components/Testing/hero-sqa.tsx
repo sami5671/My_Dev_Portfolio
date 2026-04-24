@@ -28,8 +28,8 @@ export function HeroSqa() {
   };
 
   const stats = [
-    { number: "5+", label: "Manual Testing" },
-    { number: "8+", label: "Automation Testing" },
+    { number: "2+", label: "Manual Testing" },
+    { number: "3+", label: "Automation Testing" },
     { number: "1", label: "Hult Prize Champion" },
     { number: "1", label: "NASA Finalist" },
   ];
@@ -56,9 +56,8 @@ export function HeroSqa() {
             </motion.div>
 
             <motion.p variants={itemVariants} className="text-foreground/70 text-lg leading-relaxed">
-              Ensuring the delivery of flawless, high-performing software solutions. I specialize in manual and
-              automated testing, identifying critical bugs, and improving overall software quality. Experienced in
-              creating comprehensive test plans, executing test cases, and implementing modern QA methodologies.
+              I believe that code may build the product, but testing ensures its success. I'm passionate about software
+              testing & delivering bug free software so that users can get the best experience.
             </motion.p>
 
             {/* Stats */}

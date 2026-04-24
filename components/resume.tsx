@@ -5,14 +5,6 @@ import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 
 export function Resume() {
-  const handleDownload = () => {
-    // Create a sample PDF or download link
-    const link = document.createElement("a");
-    link.href = "#"; // Replace with actual resume URL
-    link.download = "MD_Sami_Alam_Resume.pdf";
-    link.click();
-  };
-
   return (
     <section id="resume" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -85,18 +77,20 @@ export function Resume() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-primary to-accent rounded-2xl blur opacity-40 group-hover/button:opacity-100 transition-all duration-300 animate-pulse" />
 
                   <Button
-                    onClick={handleDownload}
+                    asChild
                     size="lg"
                     className="relative bg-gradient-to-r from-primary to-accent hover:opacity-90 text-foreground font-bold py-8 px-12 text-lg h-auto rounded-2xl group-hover/button:shadow-2xl group-hover/button:shadow-primary/40 transition-all duration-300"
                   >
-                    <motion.div
-                      className="flex items-center gap-3"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    >
-                      <Download className="w-6 h-6" />
-                      <span>Download Resume (PDF)</span>
-                    </motion.div>
+                    <a href="/MD_SAMI_ALAM.pdf" download="MD_SAMI_ALAM.pdf">
+                      <motion.div
+                        className="flex items-center gap-3"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
+                        <Download className="w-6 h-6" />
+                        <span>Download Resume (PDF)</span>
+                      </motion.div>
+                    </a>
                   </Button>
                 </div>
               </motion.div>

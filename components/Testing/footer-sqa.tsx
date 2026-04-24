@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 
-export function Footer() {
+export function FooterSqa() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -27,7 +27,10 @@ export function Footer() {
             <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
               Sami.dev
             </h3>
-            <p className="text-foreground/60 text-sm">Full-stack MERN developer crafting scalable web solutions.</p>
+            <p className="text-foreground/60 text-sm leading-relaxed max-w-xs">
+              I believe that code may build the product, but testing ensures its success. I'm passionate about software
+              testing & delivering bug free software so that users can get the best experience.
+            </p>
           </div>
 
           {/* Quick Links */}

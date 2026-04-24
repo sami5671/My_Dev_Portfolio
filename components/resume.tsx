@@ -39,28 +39,9 @@ export function Resume() {
 
                 <p className="text-foreground/70 text-lg leading-relaxed">
                   Get a quick overview of my experience, technical expertise, project portfolio, and professional
-                  achievements. My resume highlights my full-stack development capabilities, successful project
-                  implementations, and recognized leadership accomplishments.
+                  achievements. My resume highlights my SQA capabilities, successful project implementations, and
+                  recognized leadership accomplishments.
                 </p>
-
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span className="text-foreground/80">3+ Years of Full Stack Development</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-accent" />
-                    <span className="text-foreground/80">Expert in MERN Stack Architecture</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span className="text-foreground/80">Proven Track Record with Startups & Scale-ups</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-accent" />
-                    <span className="text-foreground/80">Leadership Experience in Hackathons</span>
-                  </div>
-                </div>
 
                 <p className="text-sm text-foreground/60 pt-4">Last Updated: February 2026</p>
               </motion.div>

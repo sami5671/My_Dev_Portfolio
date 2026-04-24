@@ -1,13 +1,12 @@
 "use client";
 
 import { Achievements } from "@/components/achievements";
-import { Blog } from "@/components/blog";
 import { Contact } from "@/components/contact";
-import { Footer } from "@/components/footer";
 import { GradientBackground } from "@/components/gradient-background";
 import { Navbar } from "@/components/navbar";
 import { Resume } from "@/components/resume";
 import { ScrollProgress } from "../scroll-progress";
+import { FooterSqa } from "./footer-sqa";
 import { HeroSqa } from "./hero-sqa";
 import { ProjectsSqa } from "./projects-sqa";
 import { SkillsSqa } from "./skills-sqa";
@@ -23,9 +22,9 @@ export function SqaHome() {
       <ProjectsSqa />
       <Achievements />
       <Resume />
-      <Blog />
+      {/* <Blog /> */}
       <Contact />
-      <Footer />
+      <FooterSqa />
     </>
   );
 }

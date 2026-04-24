@@ -8,31 +8,31 @@ export function SkillsSqa() {
     {
       icon: Globe,
       title: "Manual Testing",
-      skills: ["Test Planning", "Test Case Design", "Bug Tracking", "Jira", "Regression Testing", "Agile/Scrum"],
+      skills: ["Test Planning", "Test Case Design", "Bug Tracking", "Jira", "Regression Testing", "Agile"],
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Code2,
       title: "Automation Testing",
-      skills: ["Selenium", "Pytest", "Cypress", "Appium", "Playwright", "TestNG"],
+      skills: ["Selenium", "Playwright", "TestNG"],
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: Database,
       title: "Database Testing",
-      skills: ["SQL", "MySQL", "MongoDB", "Data Validation", "PostgreSQL"],
+      skills: ["SQL", "MySQL", "MongoDB", "Data Validation"],
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: Lock,
       title: "Performance Testing",
-      skills: ["JMeter", "LoadRunner", "k6", "Gatling"],
+      skills: ["JMeter", "k6"],
       color: "from-orange-500 to-red-500",
     },
     {
       icon: TestTubes,
       title: "API Testing",
-      skills: ["Postman", "Newman", "Rest-Assured", "Swagger", "GraphQL"],
+      skills: ["Postman", "Swagger"],
       color: "from-green-500 to-lime-200",
     },
   ];

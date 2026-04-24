@@ -15,6 +15,21 @@ export function ProjectsSqa() {
   const projects = [
     {
       id: 1,
+      title: "360 Patshala Authentication Manual Testing",
+      description: "Manual Testing",
+      type: "manual",
+      image: "/360patshala.png",
+      achievements: [
+        "Login functionality test",
+        "Registration functionality test",
+        "Bug Report of Login & Registration",
+      ],
+      tech: ["Manual Testing", "MS Word", "MS Excel"],
+      githubLink: "https://github.com/sami5671/Manual_Testing_Authentication",
+      applicationLink: "https://360pathshala.com/",
+    },
+    {
+      id: 2,
       title: "Add To Cart Testing With Price Calculation",
       description: "Automation Testing",
       type: "automation",
@@ -32,7 +47,7 @@ export function ProjectsSqa() {
       applicationLink: "https://automationexercise.com/",
     },
     {
-      id: 2,
+      id: 3,
       title: "AI Professor Performance Testing k6",
       description: "Performance Testing",
       type: "performance",
@@ -50,7 +65,7 @@ export function ProjectsSqa() {
       applicationLink: "https://diu.aiteacher.daffodilglobal.ai/",
     },
     {
-      id: 3,
+      id: 4,
       title: "End-to-End Automation E-Commerce Website",
       description: "Automation Testing",
       type: "automation",
@@ -66,21 +81,6 @@ export function ProjectsSqa() {
       tech: ["Selenium", "Java", "TestNG", "Maven", "POM"],
       githubLink: "https://github.com/sami5671/NopCommerce_selenium_web_automation?tab=readme-ov-file",
       applicationLink: "https://demo.nopcommerce.com/",
-    },
-    {
-      id: 4,
-      title: "360 Patshala Authentication Manual Testing",
-      description: "Manual Testing",
-      type: "manual",
-      image: "/360patshala.png",
-      achievements: [
-        "Login functionality test",
-        "Registration functionality test",
-        "Bug Report of Login & Registration",
-      ],
-      tech: ["Manual Testing", "MS Word", "MS Excel"],
-      githubLink: "https://github.com/sami5671/Manual_Testing_Authentication",
-      applicationLink: "https://360pathshala.com/",
     },
   ];
 

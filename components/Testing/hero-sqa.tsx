@@ -130,7 +130,7 @@ export function HeroSqa() {
 
               {/* Image container */}
               <div className="relative w-full h-full animate-float rounded-full overflow-hidden bg-background/50 backdrop-blur-xl border-2 border-primary/30 shadow-2xl">
-                <Image src="/profile.jpeg" alt="MD Sami Alam" fill className="object-cover object-top" priority />
+                <Image src="/profile.png" alt="MD Sami Alam" fill className="object-cover object-top" priority />
               </div>
             </div>
           </motion.div>

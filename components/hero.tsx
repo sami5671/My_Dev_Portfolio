@@ -133,7 +133,7 @@ export function Hero() {
 
               {/* Image container */}
               <div className="relative w-full h-full rounded-full overflow-hidden bg-background/50 backdrop-blur-xl border-2 border-primary/30 shadow-2xl animate-float">
-                <Image src="/profile.jpeg" alt="MD Sami Alam" fill className="object-cover object-top" priority />
+                <Image src="/profile.png" alt="MD Sami Alam" fill className="object-cover object-top" priority />
               </div>
             </div>
           </motion.div>
